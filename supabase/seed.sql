@@ -33,7 +33,7 @@ values
   ('Papaya', 'papaya',
    'Yumuşak dokusu ve tatlı aromasıyla taze tüketim, smoothie ve meyve tabakları için uygun tropikal meyve.',
    E'Yumuşak dokusu ve tatlı aromasıyla taze tüketim, smoothie ve meyve tabakları için uygun tropikal meyve.\nİkiye bölünüp çekirdekleri alınarak kaşıkla tüketilebilir.',
-   350, 'kg', 'in_stock', null, '{}', false, true, 60, false),
+   350, 'kg', 'in_stock', '/images/products/papaya/papaya-cover.webp', '{}', false, true, 60, false),
 
   ('Ejderha Meyvesi', 'ejderha-meyvesi',
    'Dikkat çekici görünümü ve hafif aromasıyla taze tüketim ve sunumlarda öne çıkan egzotik meyve.',

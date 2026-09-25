@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { track } from "@/lib/analytics";
 import { navLinks, site } from "@/lib/site";
 import { GENERAL_ORDER_MESSAGE, whatsappUrl } from "@/lib/whatsapp";
@@ -10,7 +11,11 @@ import { CloseIcon, InstagramIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "./i
 import { Logo } from "./logo";
 import { isActivePath } from "./nav-links";
 
-/** Erişilebilir tam ekran mobil menü: Esc ile kapanır, odak menü içinde kalır, arka plan kaydırılmaz. */
+/**
+ * Erişilebilir tam ekran mobil menü: Esc ile kapanır, odak menü içinde kalır, arka plan kaydırılmaz.
+ * Panel document.body'ye taşınır (portal): header'daki backdrop-filter, `fixed` çocukları kendi kutusuna
+ * hapsettiği için menü aksi halde ekran yerine 64px'lik header içinde açılır ve linklere dokunulamaz.
+ */
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -76,7 +81,8 @@ export function MobileMenu() {
         <MenuIcon size={26} />
       </button>
 
-      {open ? (
+      {open
+        ? createPortal(
         <div
           id="mobil-menu"
           ref={panelRef}
@@ -133,7 +139,7 @@ export function MobileMenu() {
               <a
                 href={site.phoneHref}
                 onClick={() => track("phone_click", { location: "mobile_menu" })}
-                className="btn btn-outline"
+                className="btn btn-outline !px-3 whitespace-nowrap"
               >
                 <PhoneIcon size={18} />
                 {site.phoneDisplay}
@@ -144,7 +150,7 @@ export function MobileMenu() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => track("instagram_click", { location: "mobile_menu" })}
-                  className="btn btn-outline"
+                  className="btn btn-outline !px-3 whitespace-nowrap"
                 >
                   <InstagramIcon size={18} />
                   Instagram
@@ -152,8 +158,10 @@ export function MobileMenu() {
               ) : null}
             </div>
           </div>
-        </div>
-      ) : null}
+        </div>,
+        document.body,
+      )
+        : null}
     </>
   );
 }

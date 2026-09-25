@@ -12,7 +12,7 @@ import path from "node:path";
 
 const PHOTOS = path.resolve("assets/photos");
 const OUT = path.resolve("public/images");
-const SLUGS = ["avokado", "mango", "muz", "carkifelek", "limon", "ejderha-meyvesi"];
+const SLUGS = ["avokado", "mango", "muz", "carkifelek", "limon", "ejderha-meyvesi", "papaya"];
 const HERO_BG = { r: 241, g: 234, b: 219 }; // #F1EADB (hero bölümü zemini)
 
 const out = async (file) => {
@@ -25,7 +25,11 @@ const photo = (slug) => path.join(PHOTOS, `${slug}.webp`);
 /* ---------------------------------------------------------------- ürün kapakları */
 async function products() {
   for (const slug of SLUGS) {
-    await sharp(photo(slug)).webp({ quality: 84, effort: 5 }).toFile(await out(`products/${slug}/${slug}-cover.webp`));
+    // Kartlar 4:5 gösterir; kare/başka oranlı kaynaklar ortadan 4:5'e kırpılır (4:5 kaynaklarda değişiklik olmaz)
+    await sharp(photo(slug))
+      .resize(1122, 1402, { fit: "cover", position: "centre" })
+      .webp({ quality: 84, effort: 5 })
+      .toFile(await out(`products/${slug}/${slug}-cover.webp`));
     // Eski illüstrasyon detay görseli artık kullanılmıyor
     await rm(path.join(OUT, `products/${slug}/${slug}-detay.webp`), { force: true });
     console.log("✓ ürün", slug);

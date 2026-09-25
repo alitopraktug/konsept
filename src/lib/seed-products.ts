@@ -98,7 +98,7 @@ const seeds: Seed[] = [
     price: 350,
     unit: "kg",
     stock_status: "in_stock",
-    cover_image: null,
+    cover_image: "/images/products/papaya/papaya-cover.webp",
     featured: false,
     display_order: 60,
     ripeness_enabled: false,
