@@ -1,0 +1,42 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next.js
+.next
+out
+build
+next-env.d.ts
+*.tsbuildinfo
+
+# environment & secrets — ASLA commit etmeyin
+.env
+.env.local
+.env.*.local
+.env.production
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+service-account*.json
+private/
+secrets/
+
+# supabase local
+supabase/.temp
+supabase/.branches
+supabase/.env
+
+# vercel
+.vercel
+
+# logs / os
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.claude/
+
+# yerel referans dosyaları (depoya gitmez)
+assets/photos/_kolaj-referans.webp
