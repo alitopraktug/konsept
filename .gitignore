@@ -36,7 +36,6 @@ supabase/.env
 npm-debug.log*
 .DS_Store
 Thumbs.db
-.claude/
 
 # yerel referans dosyaları (depoya gitmez)
 assets/photos/_kolaj-referans.webp
