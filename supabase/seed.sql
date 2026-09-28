@@ -38,5 +38,5 @@ values
   ('Ejderha Meyvesi', 'ejderha-meyvesi',
    'Dikkat çekici görünümü ve hafif aromasıyla taze tüketim ve sunumlarda öne çıkan egzotik meyve.',
    E'Dikkat çekici görünümü ve hafif aromasıyla taze tüketim ve sunumlarda öne çıkan egzotik meyve.\nOrtadan kesilip kaşıkla tüketilebilir; meyve tabaklarında, smoothie bowl ve sunumlarda kullanılabilir.',
-   320, 'kg', 'in_stock', '/images/products/ejderha-meyvesi/ejderha-meyvesi-cover.webp', '{}', true, true, 70, false)
+   250, 'kg', 'in_stock', '/images/products/ejderha-meyvesi/ejderha-meyvesi-cover.webp', '{}', true, true, 70, false)
 on conflict (slug) do nothing;

@@ -111,7 +111,7 @@ const seeds: Seed[] = [
       "Dikkat çekici görünümü ve hafif aromasıyla taze tüketim ve sunumlarda öne çıkan egzotik meyve.",
     description:
       "Dikkat çekici görünümü ve hafif aromasıyla taze tüketim ve sunumlarda öne çıkan egzotik meyve.\nOrtadan kesilip kaşıkla tüketilebilir; meyve tabaklarında, smoothie bowl ve sunumlarda kullanılabilir.",
-    price: 320,
+    price: 250,
     unit: "kg",
     stock_status: "in_stock",
     cover_image: "/images/products/ejderha-meyvesi/ejderha-meyvesi-cover.webp",
